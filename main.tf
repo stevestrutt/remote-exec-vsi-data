@@ -12,7 +12,7 @@ resource "null_resource" "webapp1" {
   connection {
     user = "root"
     host = "158.176.131.42"
-    private_key = "${file("~/.ssh/id_rsa")}"
+    private_key = "${var.ssh_private_key}"
   }
   provisioner "remote-exec" {
     script = "update.sh"
