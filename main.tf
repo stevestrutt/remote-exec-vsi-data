@@ -8,16 +8,15 @@
 # Create VM configured to for SSH remote access
 ########################################################
 
-resource "null_resource" "webapp1" {  
+resource "null_resource" "webapp1" {
   connection {
-    user = "root"
-    host = "158.176.131.42"
-    private_key = "${var.ssh_private_key}"
+    bastion_host = "52.116.140.31"
+    user         = "root"
+    host         = "172.22.192.8"
+    private_key  = "${var.ssh_private_key}"
   }
+
   provisioner "remote-exec" {
     script = "update.sh"
   }
-
 }
-
-
