@@ -18,7 +18,7 @@ resource "null_resource" "webapp1" {
   }
 
   provisioner "local-exec" {
-    command = "ls -al"
+    command = "ls -R"
   }
 
   # provisioner "remote-exec" {
