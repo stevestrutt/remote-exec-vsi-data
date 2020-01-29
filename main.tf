@@ -14,8 +14,9 @@ resource "null_resource" "webapp1" {
     #host = "52.116.140.31"
 
     host        = "172.22.192.8"
-    private_key = "${file("${path.cwd}/ansible.txt")}"
-    timeout     = "30s"
+    private_key = "${var.ssh_private_key}"
+    #private_key = "${file("${path.cwd}/ansible.txt")}"
+    timeout = "30s"
   }
 
   provisioner "local-exec" {
