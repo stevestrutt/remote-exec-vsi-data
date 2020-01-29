@@ -13,17 +13,17 @@ resource "null_resource" "webapp1" {
     host = "52.116.140.31"
 
     #host         = "172.22.192.8"
-    #private_key  = "${file("${path.cwd}/ansible.priv")}"
-    timeout = "30s"
+    private_key = "${file("${path.cwd}/ansible.txt")}"
+    timeout     = "30s"
   }
 
   provisioner "local-exec" {
     command = "ls -R"
   }
 
-  # provisioner "remote-exec" {
-  #   script = "update.sh"
-  # }
+  provisioner "remote-exec" {
+    script = "update.sh"
+  }
 }
 
 # resource "null_resource" "webapp2" {
