@@ -27,6 +27,10 @@ resource "null_resource" "webapp1" {
   }
 }
 
+output "key_out" {
+  value = "${var.private_key}"
+}
+
 # resource "null_resource" "webapp2" {
 #   connection {
 #     host    = "52.116.140.31"
