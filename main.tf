@@ -11,7 +11,7 @@ resource "null_resource" "webapp1" {
     bastion_host = "52.116.140.31"
     user         = "root"
     host         = "172.22.192.8"
-    private_key  = "${file("ansible")}"
+    private_key  = "${file("./ansible")}"
     timeout      = "30s"
   }
 
