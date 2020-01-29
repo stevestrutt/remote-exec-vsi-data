@@ -8,11 +8,13 @@
 ########################################################
 resource "null_resource" "webapp1" {
   connection {
-    bastion_host = "52.116.140.31"
-    user         = "root"
-    host         = "172.22.192.8"
-    private_key  = "${file("${path.cwd}/ansible.priv")}"
-    timeout      = "30s"
+    #bastion_host = "52.116.140.31"
+    user = "root"
+    host = "52.116.140.31"
+
+    #host         = "172.22.192.8"
+    #private_key  = "${file("${path.cwd}/ansible.priv")}"
+    timeout = "30s"
   }
 
   provisioner "local-exec" {
