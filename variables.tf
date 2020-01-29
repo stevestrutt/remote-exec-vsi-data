@@ -1,58 +1,16 @@
 # Variables
-
-
-
-variable ssh_label {
-  description = "ssh label"
-  default     = "wcpclouduk1"
-}
-
-variable ssh_public_key {
-  description = "ssh public key"
-}
-
+# variable ssh_label {
+#   description = "ssh label"
+#   default     = "wcpclouduk1"
+# }
+# variable ssh_public_key {
+#   description = "ssh public key"
+# }
 variable ssh_private_key {
   description = "SSH Private key to allow automation to access to VSI to install AWX"
-}
 
-
-
-variable ssh_notes {
-  description = "ssh public key notes"
-  default     = "SSH key for remote access to web site"
-}
-
-
-variable osrefcode {
-  default = "CENTOS_7_64"
-}
-
-
-variable datacenter1 {
-  default = "lon02"
-}
-
-variable ssl_cert {
-  default = ""
-
-  # <<EOF
-  # -----BEGIN CERTIFICATE-----
-  # MIIEujCCA6KgAwIBAgIJAKMRot3rBodEMA0GCSqGSIb3DQEBBQUAMIGZMQswCQYD
-  #
-  # DDtf0yuw5VRx2wnTWhv+ezUkhRGCL80fnqkWB94IS66UHlO5WyHw1cgQEVW1ie2y
-  # baU37Sk90FDVrroBgNY=
-  # -----END CERTIFICATE-----
-  #     EOF
-}
-
-variable ssl_private_key {
-  default = ""
-
-  # <<EOF
-  # -----BEGIN RSA PRIVATE KEY-----
-  # MIIEowIBAAKCAQEA4FVtSfL4azhQQgce0as+SP91igoY8WHvDCv05H1XwshwXu3Q
-  #
-  # ykXbeuyhK6AL6V3NsJyP454bM8dmZnxBrZvRo5FnqQInGgwGSjgc
-  # -----END RSA PRIVATE KEY-----
-  #     EOF
+  #   type = "string"
+  #   default = "-----BEGIN OPENSSH PRIVATE KEY-----
+  # b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdzc2gtcnNhAAAAAwEAAQAAAQEAukoZff7Rzu3sS5TBPU4wG9NkeXWXvdp0/qGgmQjPTr/fGVesdJFqHYsHsVtVttBlfMI7+529e7a/AqtJs5DmbMOhIjN1+oU45HmsJona0sDkeezaRZ8nNxvdbzUfU31oXh8lm8BIzSMWSbyMbZpjsxWkDTETdtVFl/dzXjXe8EFt21xrwBFFAkALPsx+KqwzF76iMq2licrdlz7OpE02jRfLZ44ksdsxI7xYuDSBFGqNsaY57nXwrMpmPoAfSezSQK27QRhQQMV4BjZSj+1SU411++kfYgYomER8VQyYhjf6xnEqkBdf72PUBlCbfZ+I+7jJR2Ve51OI2HMqMxNfdQAAA9CH75ghh++YIQAAAAdzc2gtcnNhAAABAQC6Shl9/tHO7exLlME9TjAb02R5dZe92nT+oaCZCM9Ov98ZV6x0kWodiwexW1W20GV8wjv7nb17tr8Cq0mzkOZsw6EiM3X6hTjkeawmidrSwOR57NpFnyc3G91vNR9TfWheHyWbwEjNIxZJvIxtmmOzFaQNMRN21UWX93NeNd7wQW3bXGvAEUUCQAs+zH4qrDMXvqIyraWJyt2XPs6kTTaNF8tnjiSx2zEjvFi4NIEUao2xpjnudfCsymY+gB9J7NJArbtBGFBAxXgGNlKP7VJTjXX76R9iBiiYRHxVDJiGN/rGcSqQF1/vY9QGUJt9n4j7uMlHZV7nU4jYcyozE191AAAAAwEAAQAAAQBndXG07Mk+4BoEW8f6MSs8uOkrH2i3ktS4+bCEbUUc2iigHXX0gzHo2GbcU/pFfnVulTzU3+T1CSgJ5nEXHdkq/HbH1Man7EcNdJlsCdGSjHgXUrhiRCJ2U65l7Z3JM3O8GhY76s1DyEG/j8x5rm3Cbrlebiv+KjHtVQsofkijKvCw0LN1HwGxcy+fGF+i5z6at0CUHdjpf3INztSrpbD8yM4TeXcjIKNPs0d/Uhs9CC77NUvfjKtFwZFL17+3J2YNcR4UbV0BAA+JEWnHiY6cvzEWLgU/574FdISfniJas2qEAWO8sgcODltMpMWHJr47b50vgoiD1eDHJB79BMJBAAAAgHKkK9NR9NY/GQWWbiDQXzUzmN0BWsP0t5xhsOC3jq5dGxJK9QlW+uq/FYIL9XwLoLQLOiobdPbpFRwoJINcsKsHJP/yuBsO6LAHwmbgw7ctvxjztN+nsHWBpcvdQDjGL5mbTNkSPliAWiccFpvWiV6GnL+9H46mTkfTSnfuZXXPAAAAgQDcqfC/NqHmouj5YPw8vtCIszimVyhGTbAg/85bIPpRVZCb87H9pDKtpBT8y8vE+NEtZ/lfFbh/JlRaMRbvPm3YhKm+OFPBy+4ll3wnjMIdn+N4h9mWIhNOJ0eqahhiV+7rCu+ETWArxYQcmFPDvcaD2Ya95Ultp3sVbqhzh7eo5QAAAIEA2B79baFL7YtJXGRWT0+FT6kCkSRWF6F/XmkcL5uWRbTwCt5/sTkkJz6Ic8i5Q9VLvV/AZoixxqudCmrvhkUULwkoh/MzJ+0EDTUb2A1SpiEy5jKl4AtWeE0HPj9dgQhwgtcriFNCnEQ5x1GD71VboVyIZeINJMR9CBEvFqCHQ1EAAAAbc3RldmVzdHJ1dHRAU3RldmVzLU1CUC5ob21l
+  # -----END OPENSSH PRIVATE KEY-----"
 }
