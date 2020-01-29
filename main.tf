@@ -28,9 +28,10 @@ resource "null_resource" "webapp1" {
   }
 }
 
-output "key_out" {
-  value = "${var.ssh_private_key}"
-}
+# output "key_out" {
+#   value = "${var.ssh_private_key}"
+# }
+
 
 # resource "null_resource" "webapp2" {
 #   connection {
