@@ -19,8 +19,9 @@
 # }
 resource "null_resource" "webapp2" {
   connection {
-    host = "52.116.140.31"
-    user = "root"
+    host    = "52.116.140.31"
+    user    = "root"
+    timeout = "30s"
 
     #host         = "172.22.192.8"
     #private_key = "${file("/Users/stevestrutt/.ssh/ansible")}"
