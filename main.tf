@@ -15,9 +15,13 @@ resource "null_resource" "webapp1" {
     timeout      = "30s"
   }
 
-  provisioner "remote-exec" {
-    script = "update.sh"
+  provisioner "local-exec" {
+    script = "ls -al"
   }
+
+  # provisioner "remote-exec" {
+  #   script = "update.sh"
+  # }
 }
 
 # resource "null_resource" "webapp2" {
